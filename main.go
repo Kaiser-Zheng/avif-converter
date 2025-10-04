@@ -33,7 +33,7 @@ type ConvertResult struct {
 func main() {
 	// CLI flags
 	input := flag.String("input", ".", "Directory to scan for image files")
-	format := flag.String("format", "", "Image format to convert (e.g., jpg, jpeg, heic)")
+	format := flag.String("format", "", "Image format to convert (e.g., jpg, jpeg, png, webp)")
 	prefix := flag.String("prefix", "", "Optional prefix for output filenames")
 	output := flag.String("output", "", "Output directory (default: same as input)")
 	workers := flag.Int("workers", 4, "Number of parallel conversion workers")
@@ -187,9 +187,7 @@ func scanDirectory(inputDir string) ([]FileInfo, map[string]int, error) {
 		"jpeg": true,
 		"png":  true,
 		"bmp":  true,
-		"tiff": true,
 		"webp": true,
-		"heic": true, // will be included but we won't parse EXIF/time specially
 	}
 
 	err := filepath.WalkDir(inputDir, func(path string, d os.DirEntry, walkErr error) error {

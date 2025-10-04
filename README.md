@@ -1,11 +1,11 @@
 # AVIF Converter
 
-A fast, parallel image-to-AVIF converter written in Go. Convert your JPG, PNG, WebP, HEIC, BMP, and TIFF images to the modern AVIF format with significant file size reductions.
+A fast, parallel image-to-AVIF converter written in Go. Convert your JPG, PNG, WebP, and BMP images to the modern AVIF format with significant file size reductions.
 
 ## Features
 
 - **Parallel Processing**: Convert multiple images simultaneously with configurable worker threads
-- **Multiple Format Support**: Handles JPG, JPEG, PNG, WebP, HEIC, BMP, and TIFF
+- **Multiple Format Support**: Handles JPG, JPEG, PNG, WebP, and BMP
 - **Flexible Naming**: Keep original filenames or generate timestamped names with optional prefixes
 - **Dry Run Mode**: Preview conversions before executing
 - **Collision Handling**: Automatically handles duplicate output filenames
@@ -86,7 +86,7 @@ This creates an executable named `avif-converter` in your current directory.
 -input string
     Directory to scan for image files (default ".")
 -format string
-    Image format to convert (e.g., jpg, jpeg, heic)  <-- required
+    Image format to convert (e.g., jpg, jpeg, png, webp)  <-- required
 -prefix string
     Optional prefix for output filenames
 -output string
@@ -139,6 +139,4 @@ These settings provide excellent quality with significant file size reduction (t
 - **JPG/JPEG**: Standard JPEG images
 - **PNG**: Portable Network Graphics
 - **WebP**: Google's WebP format
-- **HEIC**: High Efficiency Image Container (Apple format)
 - **BMP**: Windows Bitmap
-- **TIFF**: Tagged Image File Format
